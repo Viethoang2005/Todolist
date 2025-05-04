@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
@@ -7,6 +7,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const [tasks, setTask] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
+  
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (savedTasks) {
+      setTask(savedTasks);
+    }
+  }, []);
+
+  useEffect(() => {
+    if(tasks.length > 0) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
 
   const addTasks = (newTask) => {
     setTask([...tasks, newTask]);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./TodoForm.css";
 import { useNavigate } from "react-router";
 
-function TodolistForm({ addTasks, editTask, editingTask }) {
+function TodoForm({ addTasks, editTask, editingTask }) {
   const [name, setName] = useState("");
   const [state, setState] = useState("");
 
@@ -94,4 +94,4 @@ function TodolistForm({ addTasks, editTask, editingTask }) {
   );
 }
 
-export default TodolistForm;
+export default TodoForm;
