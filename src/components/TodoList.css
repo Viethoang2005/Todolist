@@ -1,0 +1,14 @@
+#add {
+  bottom: 50px;
+  position: absolute;
+  right: 50px;
+}
+
+.list-task {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  align-items: center;
+}
